@@ -1,6 +1,6 @@
 /*
 Java Spark Sample Source code Accessing Amazon S3 Data Source.
-	Copyright © 1997-@year@ ASG Technologies Group, Inc. All rights reserved.
+	Copyright © 2019 ASG Technologies Group, Inc. All rights reserved.
 */
 
 
