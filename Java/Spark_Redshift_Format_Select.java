@@ -21,7 +21,7 @@ public class Spark_Redshift_Format_Select {
 		jdbcDF_r1 = spark.read().format("jdbc")
 				.option("url", "jdbc:redshift://aws-redshift.c3iskdv9vipb.us-east-1.redshift.amazonaws.com:5439/world")
 				.option("driver","com.amazon.redshift.jdbc.Driver")
-				.option("dbtable", "public.employee")
+				.option("dbtable", "demo.employee")
 				.option("user", "USERNAME HERE")
 				.option("password", "PASSWORD HERE").load()
 				.select("empid", "ename", "address");
@@ -30,7 +30,7 @@ public class Spark_Redshift_Format_Select {
 				.format("jdbc")	
 				.option("url", "jdbc:redshift://aws-redshift.c3iskdv9vipb.us-east-1.redshift.amazonaws.com:5439/world")
 				.option("driver","com.amazon.redshift.jdbc.Driver")
-				.option("dbtable", "public.qa_javaemployee")
+				.option("dbtable", "demo.qa_javaemployee")
 				.option("user", "USERNAME HERE")
 				.option("password", "PASSWORD HERE").save();
 

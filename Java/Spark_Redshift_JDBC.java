@@ -26,10 +26,10 @@ public class Spark_Redshift_JDBC {
 		connectionProperties.put("driver","com.amazon.redshift.jdbc.Driver");
 		
 		jdbcDF_r2 = spark.read().jdbc("jdbc:redshift://aws-redshift.c3iskdv9vipb.us-east-1.redshift.amazonaws.com:5439/world", 
-				"public.employee", connectionProperties);
+				"demo.employee", connectionProperties);
 		
 		jdbcDF_r2.write().jdbc("jdbc:redshift://aws-redshift.c3iskdv9vipb.us-east-1.redshift.amazonaws.com:5439/world", 
-				"public.writeqa_employee", connectionProperties);
+				"demo.writeqa_employee", connectionProperties);
 		
 		spark.stop();
 	}

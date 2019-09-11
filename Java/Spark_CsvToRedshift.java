@@ -18,14 +18,14 @@ public class Spark_CsvToRedshift {
 				.config("spark.some.config.option", "some-value").getOrCreate();
 		
 		Dataset<Row> jdbcDF_r5 = null;
-		jdbcDF_r5 = spark.read().csv("s3a://asgcombilling/PySpark/Source/emp.csv");
+		jdbcDF_r5 = spark.read().csv("s3a://asgcoms3bucket/testFiles/JavaSpark/Source/emp.csv");
 		//jdbcDF = spark.read().csv("C:/RedShift/Raghav/LineageSourceFiles/user/root/java/QASource/spark.csv");
 		
 		jdbcDF_r5.write().mode(SaveMode.Overwrite)
 			.format("jdbc")	
 			.option("url", "jdbc:redshift://aws-redshift.c3iskdv9vipb.us-east-1.redshift.amazonaws.com:5439/world")
 			.option("driver","com.amazon.redshift.jdbc.Driver")
-			.option("dbtable", "public.qa_java_csvtoredshift")
+			.option("dbtable", "demo.qa_java_csvtoredshift")
 			.option("user", "USERNAME HERE")
 			.option("password", "PASSWORD HERE").save();
 		

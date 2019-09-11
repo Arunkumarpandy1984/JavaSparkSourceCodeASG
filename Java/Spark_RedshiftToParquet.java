@@ -20,11 +20,11 @@ public class Spark_RedshiftToParquet {
 		jdbcDF_r7 = spark.read().format("jdbc")
 				.option("url", "jdbc:redshift://aws-redshift.c3iskdv9vipb.us-east-1.redshift.amazonaws.com:5439/world")
 				.option("driver","com.amazon.redshift.jdbc.Driver")
-				.option("dbtable", "public.employee_details")
+				.option("dbtable", "demo.employee_details")
 				.option("user", "USERNAME HERE")
 				.option("password", "PASSWORD HERE").load();
 		
-		jdbcDF_r7.write().parquet("s3a://asgcombilling/PySpark/Source/rubiks.parquet");
+		jdbcDF_r7.write().parquet("s3a://asgcoms3bucket/testFiles/JavaSpark/Source/rubiks.parquet");
 		//jdbcDF.write().parquet("C:/RedShift/Raghav/LineageTargetFiles/user/root/java/QATarget/QA_JAVA_redshifttoparquetfile.parquet");
 		
 		spark.stop();
