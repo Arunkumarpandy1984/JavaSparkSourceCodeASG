@@ -16,8 +16,8 @@ public class RDD_S3_Combinations {
 		SparkConf conf = new SparkConf().setAppName("Java Spark AWS S3 Example");
 		JavaSparkContext sc = new JavaSparkContext(conf);
 				
-		JavaRDD<String> lines = sc.textFile("s3a://asgcoms3bucket/testFiles/JavaSpark/Source/rddSource.txt");
-		lines.saveAsTextFile("s3a://asgcoms3bucket/testFiles/JavaSpark/JavaTarget/rddTarget_FileToDirectory");
+		JavaRDD<String> lines = sc.textFile("s3a://asg-ida-dev-versions/testFiles/JavaSpark/Source/rddSource.txt");
+		lines.saveAsTextFile("s3a://asg-ida-dev-versions/testFiles/JavaSpark/JavaTarget/rddTarget_FileToDirectory");
 		sc.close();
 	}
 	
@@ -25,8 +25,8 @@ public class RDD_S3_Combinations {
 		SparkConf conf = new SparkConf().setAppName("Java Spark AWS S3 Example");
 		JavaSparkContext sc = new JavaSparkContext(conf);
 
-		JavaRDD<String> lines1 = sc.textFile("s3a://asgcoms3bucket/testFiles/Java/Destination");
-		lines1.saveAsTextFile("s3a://asgcoms3bucket/testFiles/JavaSpark/JavaTarget/output_DirectoryToFile.csv");
+		JavaRDD<String> lines1 = sc.textFile("s3a://asg-ida-dev-versions/testFiles/Java/Destination");
+		lines1.saveAsTextFile("s3a://asg-ida-dev-versions/testFiles/JavaSpark/JavaTarget/output_DirectoryToFile.csv");
 		sc.close();
 
 	}
@@ -35,8 +35,8 @@ public class RDD_S3_Combinations {
 		SparkConf conf = new SparkConf().setAppName("Java Spark AWS S3 Example");
 		JavaSparkContext sc = new JavaSparkContext(conf);
 
-		JavaRDD<String> lines2 = sc.textFile("s3a://asgcoms3bucket/testFiles/Java/Destination");
-		lines2.saveAsTextFile("s3a://asgcoms3bucket/testFiles/JavaSpark/JavaTarget/output_DirectoryToDirectory");	
+		JavaRDD<String> lines2 = sc.textFile("s3a://asg-ida-dev-versions/testFiles/Java/Destination");
+		lines2.saveAsTextFile("s3a://asg-ida-dev-versions/testFiles/JavaSpark/JavaTarget/output_DirectoryToDirectory");	
 		sc.close();
 
 	}
