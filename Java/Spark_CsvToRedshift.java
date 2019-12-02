@@ -18,7 +18,7 @@ public class Spark_CsvToRedshift {
 				.config("spark.some.config.option", "some-value").getOrCreate();
 		
 		Dataset<Row> jdbcDF_r5 = null;
-		jdbcDF_r5 = spark.read().csv("s3a://asg-ida-dev-versions/testFiles/JavaSpark/Source/emp.csv");
+		jdbcDF_r5 = spark.read().csv("s3a://asg-ida-dev-language/JavaSpark/Source/emp.csv");
 		//jdbcDF = spark.read().csv("C:/RedShift/Raghav/LineageSourceFiles/user/root/java/QASource/spark.csv");
 		
 		jdbcDF_r5.write().mode(SaveMode.Overwrite)

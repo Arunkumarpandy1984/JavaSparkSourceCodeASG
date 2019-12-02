@@ -24,7 +24,7 @@ public class Spark_RedshiftToParquet {
 				.option("user", "USERNAME HERE")
 				.option("password", "PASSWORD HERE").load();
 		
-		jdbcDF_r7.write().parquet("s3a://asg-ida-dev-versions/testFiles/JavaSpark/Source/rubiks.parquet");
+		jdbcDF_r7.write().parquet("s3a://asg-ida-dev-language/JavaSpark/Source/rubiks.parquet");
 		//jdbcDF.write().parquet("C:/RedShift/Raghav/LineageTargetFiles/user/root/java/QATarget/QA_JAVA_redshifttoparquetfile.parquet");
 		
 		spark.stop();

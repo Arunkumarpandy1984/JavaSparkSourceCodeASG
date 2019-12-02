@@ -15,8 +15,8 @@ public class DF_S3_Combinations {
 		SparkSession spark = SparkSession.builder().appName("Java Spark AWS S3 basic example")
 				.config("spark.some.config.option", "some-value").getOrCreate();
 
-		Dataset<Row> userDF5 = spark.read().parquet("s3a://asg-ida-dev-versions/testFiles/JavaSpark/Source/rubiks.parquet");
-		userDF5.write().parquet("s3a://asg-ida-dev-versions/testFiles/JavaSpark/JavaTarget/rubiksTarget1");
+		Dataset<Row> userDF5 = spark.read().parquet("s3a://asg-ida-dev-language/JavaSpark/Source/rubiks.parquet");
+		userDF5.write().parquet("s3a://asg-ida-dev-language/JavaSpark/JavaTarget/rubiksTarget1");
 		spark.close();
 	}
 
@@ -24,8 +24,8 @@ public class DF_S3_Combinations {
 		SparkSession spark = SparkSession.builder().appName("Java Spark AWS S3 basic example")
 				.config("spark.some.config.option", "some-value").getOrCreate();
 
-		Dataset<Row> userDF6 = spark.read().text("s3a://asg-ida-dev-versions/testFiles/JavaSpark/Source/rddSource.txt");
-		userDF6.write().text("s3a://asg-ida-dev-versions/testFiles/JavaSpark/JavaTarget/rddSourceTarget1");
+		Dataset<Row> userDF6 = spark.read().text("s3a://asg-ida-dev-language/JavaSpark/Source/rddSource.txt");
+		userDF6.write().text("s3a://asg-ida-dev-language/JavaSpark/JavaTarget/rddSourceTarget1");
 		spark.close();
 	}
 
@@ -34,8 +34,8 @@ public class DF_S3_Combinations {
 				.config("spark.some.config.option", "some-value").getOrCreate();
 
 		Dataset<Row> userDF7 = spark.read().option("multiLine", "true")
-				.json("s3a://asg-ida-dev-versions/testFiles/JavaSpark/Source/people.json");
-		userDF7.write().json("s3a://asg-ida-dev-versions/testFiles/JavaSpark/JavaTarget/peopleTarget_01");
+				.json("s3a://asg-ida-dev-language/JavaSpark/Source/people.json");
+		userDF7.write().json("s3a://asg-ida-dev-language/JavaSpark/JavaTarget/peopleTarget_01");
 		spark.close();
 	}
 
@@ -43,8 +43,8 @@ public class DF_S3_Combinations {
 		SparkSession spark = SparkSession.builder().appName("Java Spark AWS S3 basic example")
 				.config("spark.some.config.option", "some-value").getOrCreate();
 
-		Dataset<Row> userDF8 = spark.read().option("multiLine", "true").csv("s3a://asg-ida-dev-versions/testFiles/JavaSpark/Source/emp.csv");
-		userDF8.write().csv("s3a://asg-ida-dev-versions/testFiles/JavaSpark/JavaTarget/empTarget01");
+		Dataset<Row> userDF8 = spark.read().option("multiLine", "true").csv("s3a://asg-ida-dev-language/JavaSpark/Source/emp.csv");
+		userDF8.write().csv("s3a://asg-ida-dev-language/JavaSpark/JavaTarget/empTarget01");
 		spark.close();
 	}
 
